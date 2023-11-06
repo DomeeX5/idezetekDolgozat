@@ -51,4 +51,13 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
   // ------------------------------------------------------- //
 
+  harmadikfeladat.addEventListener('click', () => {
+    const feladat = Array.from(idezetek.map((a) => a.quote.length));
+    const lista3 = document.getElementById('lista3');
+    lista3!.textContent = feladat.join(', ');
+  })
+
+  // ------------------------------------------------------- //
+
+  
 })
