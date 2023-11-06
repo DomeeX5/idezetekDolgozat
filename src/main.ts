@@ -20,6 +20,12 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
   // ------------------------------------------------------- //
 
+  const input = document.createElement('input');
+  const kereses = document.createElement('button');
+  document.getElementById("app")!.appendChild(input);
+  document.getElementById("app")!.appendChild(kereses);
+  kereses.textContent = "Keresés"
+
   elsofeladat.addEventListener('click', () => {
     const feladat = Array.from(idezetek.map((a) => a.author + ': ' + a.quote))
     feladat.sort((a, b) => a.localeCompare(b))
@@ -59,5 +65,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
   // ------------------------------------------------------- //
 
-  
+  negyedikfeladat.addEventListener('click', () => {
+    input.textContent
+  })
 })
