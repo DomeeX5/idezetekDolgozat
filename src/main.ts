@@ -5,17 +5,20 @@ document.addEventListener('DOMContentLoaded', (e) => {
   const elsofeladat = document.createElement("button");
   elsofeladat.textContent = "Összes idézet";
   document.getElementById("app")!.appendChild(elsofeladat);
+  // ------------------------------------------------------- //
   const masodikfeladat = document.createElement("button");
   masodikfeladat.textContent = "The";
   document.getElementById("app")!.appendChild(masodikfeladat);
+  // ------------------------------------------------------- //
   const harmadikfeladat = document.createElement("button");
   harmadikfeladat.textContent = "Hossz";
   document.getElementById("app")!.appendChild(harmadikfeladat);
+  // ------------------------------------------------------- //
   const negyedikfeladat = document.createElement("button");
   negyedikfeladat.textContent = "Darabszám";
   document.getElementById("app")!.appendChild(negyedikfeladat);
 
-  // -------------------------------------------------------
+  // ------------------------------------------------------- //
 
   elsofeladat.addEventListener('click', () => {
     const feladat = Array.from(idezetek.map((a) => a.author + ': ' + a.quote))
@@ -32,7 +35,20 @@ document.addEventListener('DOMContentLoaded', (e) => {
     })
   })
 
-  // -------------------------------------------------------
+  // ------------------------------------------------------- //
 
-  
+  masodikfeladat.addEventListener('click', () => {
+    const feladat = Array.from(idezetek.map((a) => a.quote));
+    const list2 = document.getElementById('lista2');
+    feladat.forEach((item) => {
+      const the = item.replace('the', '<b>the</b>');
+      const the2 = the.replace('The', '<b>The</b>');
+      let li = document.createElement("li");
+      li.innerHTML = the2;
+      list2!.appendChild(li);
+    })
+  })
+
+  // ------------------------------------------------------- //
+
 })
